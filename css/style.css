@@ -527,6 +527,64 @@ section.block.tint { background: var(--paper); }
   border-color: var(--navy);
 }
 
+/* why choose us */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 42px;
+}
+
+.why {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--orange);
+  padding: 26px 24px;
+}
+
+.why .ico {
+  width: 46px;
+  height: 46px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.why .ico svg {
+  width: 24px;
+  height: 24px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.why p { font-size: .95rem; color: var(--ink-soft); margin-top: 6px; }
+
+/* floating WhatsApp button */
+.wa-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .28);
+  z-index: 90;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.wa-float:hover { transform: scale(1.08); box-shadow: 0 8px 22px rgba(0, 0, 0, .34); }
+
+.wa-float svg { width: 30px; height: 30px; fill: #fff; }
+
 /* CTA band */
 .cta-band {
   background: linear-gradient(rgba(19, 31, 64, .85), rgba(19, 31, 64, .85)) center/cover;
@@ -712,7 +770,7 @@ footer.site ul { list-style: none; display: grid; gap: 8px; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 940px) {
-  .svc-grid, .tiles, .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .svc-grid, .tiles, .contact-grid, .why-grid { grid-template-columns: repeat(2, 1fr); }
   .trade-list ul { grid-template-columns: repeat(2, 1fr); }
   .two-col, .drawings, .contact-split, .foot-grid { grid-template-columns: 1fr; }
   .two-col .pic { order: -1; }
@@ -735,7 +793,7 @@ footer.site ul { list-style: none; display: grid; gap: 8px; }
   }
   nav.main.open { display: flex; }
   .nav-toggle { display: block; }
-  .svc-grid, .tiles, .contact-grid { grid-template-columns: 1fr; }
+  .svc-grid, .tiles, .contact-grid, .why-grid { grid-template-columns: 1fr; }
   .stats .wrap { grid-template-columns: 1fr; gap: 30px; }
   .hero .wrap { padding-top: 64px; padding-bottom: 64px; }
   .topbar .adr { display: none; }
