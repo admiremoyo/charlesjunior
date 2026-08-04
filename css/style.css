@@ -460,6 +460,51 @@ section.block.tint { background: var(--paper); }
   background: var(--orange);
 }
 
+/* fitted kitchens showcase */
+.kitchens {
+  background: var(--navy-dark);
+  color: #fff;
+  padding: 78px 0;
+}
+
+.kitchens h2 { color: #fff; }
+
+.kitchens .kicker { color: var(--orange); }
+
+.kitchens p.intro { color: #c3cbde; max-width: 52em; margin-top: 14px; }
+
+.kit-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 240px 240px;
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.kit-grid .tile img { height: 100%; }
+
+.kit-grid .k-main { grid-row: 1 / 3; }
+
+.kit-grid .k-wide { grid-column: 2 / 4; }
+
+@media (max-width: 940px) {
+  .kit-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 220px 220px;
+  }
+  .kit-grid .k-main { grid-column: 1 / 3; grid-row: 1; }
+  .kit-grid .k-wide { grid-column: 1 / 3; grid-row: 3; }
+}
+
+@media (max-width: 700px) {
+  .kit-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: 220px;
+  }
+  .kit-grid .k-main, .kit-grid .k-wide { grid-column: auto; grid-row: auto; }
+}
+
 /* project tiles */
 .tiles {
   display: grid;
