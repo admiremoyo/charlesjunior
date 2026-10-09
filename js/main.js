@@ -72,18 +72,20 @@ filterBtns.forEach(function (btn) {
   });
 });
 
-// lightbox (projects page)
+// lightbox (gallery tiles and flyers)
 var lightbox = document.getElementById("lightbox");
 if (lightbox) {
   var lbImg = lightbox.querySelector("img");
   var lbCap = lightbox.querySelector(".lb-cap");
-  tiles.forEach(function (tile) {
-    tile.addEventListener("click", function () {
-      var img = tile.querySelector("img");
-      var cap = tile.querySelector("figcaption");
+  var zoomables = document.querySelectorAll("#gallery .tile, [data-zoom]");
+  zoomables.forEach(function (item) {
+    item.addEventListener("click", function (e) {
+      if (e.target.closest("a")) return;
+      var img = item.querySelector("img");
+      var cap = item.querySelector("figcaption");
       lbImg.src = img.src;
       lbImg.alt = img.alt;
-      lbCap.textContent = cap ? cap.textContent : "";
+      lbCap.textContent = item.hasAttribute("data-zoom") ? img.alt : (cap ? cap.textContent : "");
       lightbox.classList.add("open");
     });
   });
